@@ -19,7 +19,7 @@
 	System.Buffers, Version 4.0.3.0
 	System.Runtime.CompilerServices.Unsafe, Version 4.0.4.1
 
-   Reference: tbd
+   Reference: https://blog.stefan-gossner.com/2025/08/21/trending-issue-s…workflow-manager/
 
 #>
 
