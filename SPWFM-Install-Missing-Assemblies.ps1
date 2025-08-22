@@ -74,7 +74,7 @@ if (Ckeck-All-Assemblies) {
 New-Item -Path "C:\temp\NuGet" -ItemType Directory -Force > $null
 
 ## download nuget.exe
-#Invoke-WebRequest -Uri https://dist.nuget.org/win-x86-commandline/latest/nuget.exe -Outfile c:\temp\nuget\nuget.exe > $null
+Invoke-WebRequest -Uri https://dist.nuget.org/win-x86-commandline/latest/nuget.exe -Outfile c:\temp\nuget\nuget.exe > $null
 
 
 ## download required nuget packages and add assemblies to GAC
