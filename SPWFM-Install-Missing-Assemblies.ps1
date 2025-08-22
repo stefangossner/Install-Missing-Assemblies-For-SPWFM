@@ -27,6 +27,7 @@
    Version History:
     1.0 - initial version
     2.0 - add Microsoft.Data.SqlClient and Microsoft.Idenity.Client assemblies
+    2.1 - add separate pull for System.Runtime.CompilerServices.Unsafe
 
 #>
 
@@ -73,13 +74,14 @@ if (Ckeck-All-Assemblies) {
 New-Item -Path "C:\temp\NuGet" -ItemType Directory -Force > $null
 
 ## download nuget.exe
-Invoke-WebRequest -Uri https://dist.nuget.org/win-x86-commandline/latest/nuget.exe -Outfile c:\temp\nuget\nuget.exe > $null
+#Invoke-WebRequest -Uri https://dist.nuget.org/win-x86-commandline/latest/nuget.exe -Outfile c:\temp\nuget\nuget.exe > $null
 
 
 ## download required nuget packages and add assemblies to GAC
 
 ## download required nuget packages
 & c:\temp\nuget\nuget.exe install Microsoft.Data.SqlClient -version 5.1.5 -outputdirectory c:\temp\nuget -framework net462
+& c:\temp\nuget\nuget.exe install System.Runtime.CompilerServices.Unsafe -version 4.5.3 -outputdirectory c:\temp\nuget -framework net461
 
 [System.Reflection.Assembly]::Load("System.EnterpriseServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a") > $null           
 $publish = New-Object System.EnterpriseServices.Internal.Publish
